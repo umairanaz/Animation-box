@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to left,rgb(53, 2, 49),rgb(2, 39, 46));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+    position: relative;
+}
+
+h1 {
+    color:aqua;
+    position: absolute;
+    top: 10%;
+    font-size: 60px;
+    text-shadow: 2px 2px 4px white;
+    font-style: oblique;
+
+}
+
+.boxes-to-box { color: rgb(59, 156, 3);
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    background:
+        linear-gradient(currentColor 0 0),
+        linear-gradient(currentColor 0 0),
+        linear-gradient(currentColor 0 0),
+        linear-gradient(currentColor 0 0);
+    background-size: 45px 45px;
+    background-repeat: no-repeat;
+    animation: boxes-1 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+
+
+
+.boxes-to-box:nth-child(2) {
+    color: rgb(236, 46, 236);
+    animation: boxes-2 2s infinite ease-in-out;
+}
+
+.boxes-to-box:nth-child(3) {
+    color:rgb(194, 218, 59);
+    animation: boxes-3 1.2s infinite linear;
+}
+
+.boxes-to-box:nth-child(4) {
+    color:rgb(42, 27, 173);
+    animation: boxes-4 2.5s infinite cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+
+@keyframes boxes-1 {
+    0% {
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        transform: scale(1);
+    }
+    50% {
+        background-position: 0 100%, 100% 100%, 100% 0, 0 0;
+        transform: scale(1.2);
+    }
+    100% {
+        background-position: 100% 0, 100% 100%, 0 100%, 0 0;
+        transform: scale(1);
+    }
+}
+
+@keyframes boxes-2 {
+    0% {
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        border-radius: 0%;
+    }
+    50% {
+        background-position: 100% 0, 100% 100%, 0 100%, 0 0;
+        border-radius: 50%;
+    }
+    100% {
+        background-position: 0 0, 0 100%, 100% 100%, 100% 0;
+        border-radius: 0%;
+    }
+}
+
+@keyframes boxes-3 {
+    0% {
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        transform: rotate(0deg);
+    }
+    50% {
+        background-position: 100% 0, 100% 100%, 0 100%, 0 0;
+        transform: rotate(180deg);
+    }
+    100% {
+        background-position: 0 100%, 100% 100%, 0 100%, 0 100%;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes boxes-4 {
+    0% {
+        background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+        opacity: 1;
+    }
+    50% {
+        background-position: 100% 0, 0 100%, 0 0, 100% 100%;
+        opacity: 0.5;
+    }
+    100% {
+        background-position: 100% 100%, 0 0, 0 100%, 100% 0;
+        opacity: 1;
+    }
+}
